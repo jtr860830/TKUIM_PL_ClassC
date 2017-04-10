@@ -8,6 +8,7 @@ int calculate(char[]);
 int main(int argc, char *argv[]) {
 	char stack[MAX] = {'\0'};
 	scanf("%s", stack);
+	puts("result:");
 	printf("%d\n", calculate(stack));
 	return 0;
 }
