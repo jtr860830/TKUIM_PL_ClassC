@@ -24,26 +24,27 @@ int main(int argc, char *argv[]) {
 				rmQ(que, &front, &rear);
 				break;
 			default:
-				puts("Use your brain plz.");
+				puts("Input 'a' to add 'r' to remove 'q' to quit.");
 		}
-		while (getchar() != '\n') 
-			continue;
+		while (getchar() != '\n')
+			continue;//ignore invalid input
+		puts("result:");
 		printQ(que);
 	}
 	return 0;
 }
 
 bool empty(int f, int r) {
-	if (r == f) 
+	if (r == f)
 		return true;
-	else 
+	else
 		return false;
 }
 
 bool full(int f, int r) {
 	if ((r+1)%MAX == f)
 		return true;
-	else 
+	else
 		return false;
 }
 
@@ -70,7 +71,7 @@ void rmQ(int q[], int* f, int* r) {
 }
 
 void printQ(int q[]) {
-	for (int i = 0; i < MAX; i++) 
+	for (int i = 0; i < MAX; i++)
 		if (q[i]) printf("%d", q[i]);
 	puts("");
 	return;
