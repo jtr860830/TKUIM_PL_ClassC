@@ -29,7 +29,7 @@ int main(void) {
 
 void insert(char d, node** target, node* tree[]) {
 	static int root = -1;
-	*target = malloc(sizeof(node));
+	*target = (node*)malloc(sizeof(node));
 	(*target)->data = d;
 	(*target)->left = NULL;
 	(*target)->right = NULL;
