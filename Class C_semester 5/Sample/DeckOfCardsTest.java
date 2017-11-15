@@ -7,6 +7,8 @@ class DeckOfCardsTest {
 		for (int i=0; i<52; i++) {
 			myDOC.dealCard().showCard();
 		}
+		System.out.println("-------------------------");
+		myDOC.show20suits("Diamonds");
 	}
 }
 
@@ -21,6 +23,10 @@ class Card {
 	
 	public void showCard() {
 		System.out.println(face+" of "+suit);
+	}
+
+	public String getSuit() {
+		return suit;
 	}
 }
 
@@ -45,6 +51,7 @@ class DeckOfCards {
 			deck[i] = deck[swap];
 			deck[swap] = temp;
 		}
+		currentCard = 0;
 	}
 	
 	public Card dealCard() {
@@ -52,5 +59,12 @@ class DeckOfCards {
 			return deck[currentCard++];
 		else 
 			return null;
+	}
+
+	public void show20suits(String suit) {
+		currentCard = 0;
+		for (int i=0; i<20; i++) 
+			if (deck[i].getSuit() == suit)
+				deck[i].showCard();
 	}
 }
