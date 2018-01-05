@@ -9,18 +9,18 @@ class Rational {
 	}
 
 	private int gcd(int a, int b) {
-    	while (b != 0) {
-        	int temp = a%b;
-        	a = b;
-        	b = temp;
-    	}
-    	return a;
+		while (b != 0) {
+			int temp = a%b;
+			a = b;
+			b = temp;
+		}
+		return a;
 	}
 
 	private void simp() {
 		int x=gcd(a, b);
-    	a /= x;
-    	b /= x;
+		a /= x;
+		b /= x;
 	}
 
 	public void add(Rational x) {
